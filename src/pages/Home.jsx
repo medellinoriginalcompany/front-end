@@ -3,8 +3,10 @@ import React from 'react'
 const Home = () => {
   return (
     <>
-      <main className='container-sm'>
-        Conteúdo da Página
+      <main className='max-w-7xl mx-auto px-6'>
+        <div className='flex justify-between items-center'>
+          
+        </div>
       </main>
     </>
   )
