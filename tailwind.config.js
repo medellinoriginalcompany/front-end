@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'hubba-oblique': 'Hubba',
+      }
+    },
   },
   plugins: [],
 }

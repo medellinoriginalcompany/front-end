@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Hubba';
+  src: url(./assets//fonts/Hubba-Oblique.woff);
+}
