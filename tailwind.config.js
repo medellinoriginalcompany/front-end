@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'hubba-oblique': 'Hubba',
+        'abang': 'Abang',
       }
     },
   },

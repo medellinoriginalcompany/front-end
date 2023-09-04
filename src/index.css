@@ -4,5 +4,10 @@
 
 @font-face {
   font-family: 'Hubba';
-  src: url(./assets//fonts/Hubba-Oblique.woff);
+  src: url(./assets//fonts/Hubba-Oblique.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Abang';
+  src: url(./assets/fonts/Abang-Regular.woff) format('woff');
 }
