@@ -1,14 +1,14 @@
 import ProductCard from '../ProductCard'
-import banner from '/images/section_camisetas.webp'
+import FilterButton from '../../filter/FilterButton'
 
+import banner from '/images/section_camisetas.webp'
 import model5 from '/images/model5.webp'
 import model6 from '/images/model6.webp'
 import model7 from '/images/model7.webp'
-import FilterButton from '../../filter/FilterButton'
 
 export const Tshirts = () => {
   return (
-    <section className='space-y-12'>
+    <section className='space-y-12 py-16'>
       <div className='relative'>
         <img src={banner} alt="Camisetas Medellin" className='w-full h-[65vh] object-top object-cover brightness-75' />
         <p className='font-abang font-semibold absolute top-0 py-52 px-20 text-5xl text-neutral-100'>
