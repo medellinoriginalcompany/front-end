@@ -11,16 +11,16 @@ export const Tshirts = () => {
     <section className='space-y-12 py-16'>
       <div className='relative'>
         <img src={banner} alt="Camisetas Medellin" className='w-full h-[65vh] object-top object-cover brightness-75' />
-        <p className='font-abang font-semibold absolute top-0 py-52 px-20 text-5xl text-neutral-100'>
+        <h1 className='font-abang font-semibold absolute top-0 py-52 px-20 text-5xl text-neutral-100'>
           Camisetas Medellin
-        </p>
+        </h1>
       </div>
 
       <div className='lg:max-w-6xl mx-auto space-y-5'>
         <div className='lg:max-w-5xl mx-auto'>
-          <p className='font-hubba-oblique text-5xl'>
+          <h2 className='font-hubba-oblique text-5xl'>
             Camisetas
-          </p>
+          </h2>
         </div>
 
         <div className='flex justify-between gap-9'>

@@ -10,9 +10,9 @@ const Releases = () => {
   return (
     <section className="py-14 space-y-9">
       <div className="flex justify-between items-center mx-auto lg:max-w-5xl">
-        <p className='font-hubba-oblique text-5xl'>
+        <h2 className='font-hubba-oblique text-5xl'>
           Lançamentos
-        </p>
+        </h2>
 
         <Link to='/lancamentos' className='underline'>
           Mostrar Tudo
