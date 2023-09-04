@@ -18,7 +18,7 @@ const Sweatshirts = () => {
 
       <div className='lg:max-w-6xl mx-auto space-y-5'>
         <div className='lg:max-w-5xl mx-auto'>
-          <p className='font-hubba-oblique text-5xl'>
+          <p className='font-hubba-oblique text-5xl text-center lowercase'>
             Moletons
           </p>
         </div>
