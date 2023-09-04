@@ -19,8 +19,8 @@ const Releases = () => {
         </Link>
       </div>
 
-      <div className=' mx-auto lg:max-w-6xl overflow-hidden'>
-        <div className='flex gap-5'>
+      <div className=' mx-auto lg:max-w-6xl'>
+        <div className='flex gap-5 overflow-hidden'>
           <DiscountProductCard
             model={model1}
             title='Camiseta A'

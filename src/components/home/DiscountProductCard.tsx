@@ -18,7 +18,7 @@ class DiscountProductCard extends Component<Props, State> {
   render() {
     return (
       <Link to='/'>
-        <img src={this.props.model} alt="Modelo" className='w-[349px] h-[463px] object-cover' />
+        <img src={this.props.model} alt="Modelo" className='min-w-[350px] h-[450px] object-cover' />
         <div className='py-3 text-lg'>
           <p>
             {this.props.title}

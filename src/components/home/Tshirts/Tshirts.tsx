@@ -18,7 +18,7 @@ export const Tshirts = () => {
 
       <div className='lg:max-w-6xl mx-auto space-y-5'>
         <div className='lg:max-w-5xl mx-auto'>
-          <h2 className='font-hubba-oblique text-5xl'>
+          <h2 className='font-hubba-oblique text-5xl text-center lowercase'>
             Camisetas
           </h2>
         </div>
