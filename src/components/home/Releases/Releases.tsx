@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import ProductCard from './ProductCard'
+import DiscountProductCard from '../DiscountProductCard'
 
 import model1 from '/images/model1.webp'
 import model2 from '/images/model2.webp'
@@ -21,25 +21,25 @@ const Releases = () => {
 
       <div className=' mx-auto lg:max-w-6xl overflow-hidden'>
         <div className='flex gap-5'>
-          <ProductCard
+          <DiscountProductCard
             model={model1}
             title='Camiseta A'
             oldPrice='299,99'
             newPrice='229,99'
           />
-          <ProductCard
+          <DiscountProductCard
             model={model2}
             title='Camiseta B'
             oldPrice='299,99'
             newPrice='229,99'
           />
-          <ProductCard
+          <DiscountProductCard
             model={model3}
             title='Camiseta C'
             oldPrice='299,99'
             newPrice='229,99'
           />
-          <ProductCard
+          <DiscountProductCard
             model={model4}
             title='Camiseta D'
             oldPrice='299,99'

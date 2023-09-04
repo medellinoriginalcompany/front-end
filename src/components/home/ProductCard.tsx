@@ -6,8 +6,7 @@ import { Component } from 'react'
 type Props = {
   model: string,
   title: string,
-  oldPrice: string,
-  newPrice: string,
+  price: string,
 }
 
 type State = {}
@@ -23,13 +22,9 @@ class ProductCard extends Component<Props, State> {
         <p>
           {this.props.title}
         </p>
-        <div className='space-y-1'>
-          <p className='text-neutral-500 line-through'>
-            De: R$
-            <span>{this.props.oldPrice}</span>
-          </p>
+        <div className=''>
           <div className='space-x-2'>
-            <span>R$ {this.props.newPrice}</span>
+            <span>R$ {this.props.price}</span>
             <span className='text-green-500 text-base'>23% off</span>
           </div>
         </div>
