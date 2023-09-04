@@ -54,7 +54,7 @@ const Header = () => {
             </div>
           </form>
           <div className='flex items-center gap-3'>
-            <Link to='/meu-perfil'>
+            <Link to='/login'>
               <img src={profileicon} alt="Ver Perfil" />
             </Link>
             <Link to='/wishlist'>
