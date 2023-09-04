@@ -5,7 +5,7 @@ import logo from '/images/medellin-white.png'
 const Hero = () => {
   return (
     <section className="relative">
-        <img src={herobg} alt="Banner Landing Page" className="h-[calc(100vh-112px)] w-full object-cover"/>
+        <img src={herobg} alt="Banner Landing Page" className="h-[calc(100vh-112px)] w-full object-cover brightness-75"/>
 
         <div className="absolute bottom-0 top-0">
           <div className="px-20 py-32">
