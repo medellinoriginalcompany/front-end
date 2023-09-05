@@ -10,7 +10,7 @@ export const Tshirts = () => {
   return (
     <section className='space-y-12 py-16'>
       <div className='relative'>
-        <img src={banner} alt="Camisetas Medellin" className='w-full h-[65vh] object-top object-cover brightness-75' />
+        <img src={banner} alt="Camisetas Medellin" className='w-full h-[65vh] object-center object-cover brightness-75' />
         <h1 className='font-abang font-semibold absolute top-0 py-52 px-20 text-5xl text-neutral-100'>
           Camisetas Medellin
         </h1>
