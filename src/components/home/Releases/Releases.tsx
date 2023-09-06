@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import DiscountProductCard from '../DiscountProductCard'
+import DiscountProductCard from '../Cards/DiscountProductCard'
 
 import model1 from '/images/model1.webp'
 import model2 from '/images/model2.webp'

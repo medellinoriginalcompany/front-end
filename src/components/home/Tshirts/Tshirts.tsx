@@ -1,4 +1,4 @@
-import ProductCard from '../ProductCard'
+import ProductCard from '../Cards/ProductCard'
 import FilterButton from '../../filter/FilterButton'
 import banner from '/images/section_camisetas.webp'
 import model5 from '/images/model5.webp'

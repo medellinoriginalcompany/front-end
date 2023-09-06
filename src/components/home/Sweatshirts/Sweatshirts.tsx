@@ -1,5 +1,5 @@
 import FilterButton from "../../filter/FilterButton"
-import ProductCard from "../ProductCard"
+import ProductCard from "../Cards/ProductCard"
 
 import banner from '/images/section_moletons.webp'
 import model8 from '/images/model8.webp'
