@@ -1,20 +1,19 @@
 import FilterButton from "../../filter/FilterButton"
-import ProductCard from "../ProductCard"
+import ProductCard from "../Cards/ProductCard"
 
 import banner from '/images/section_moletons.webp'
 import model8 from '/images/model8.webp'
 import model9 from '/images/model9.webp'
 import model10 from '/images/model10.webp'
+import SectionBanner from "../SectionBanner"
 
 const Sweatshirts = () => {
   return (
     <section className='space-y-12 py-16'>
-      <div className='relative'>
-        <img src={banner} alt="Camisetas Medellin" className='w-full h-[65vh] object-cover object-center brightness-75' />
-        <p className='font-abang font-semibold absolute top-0 py-52 px-20 text-5xl text-neutral-100'>
-          Moletons Medellin
-        </p>
-      </div>
+      <SectionBanner
+        banner={banner}
+        title="Moletons Medellin"
+      />
 
       <div className='lg:max-w-6xl mx-auto space-y-5'>
         <div className='lg:max-w-5xl mx-auto'>

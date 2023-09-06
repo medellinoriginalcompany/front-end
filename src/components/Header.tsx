@@ -4,13 +4,27 @@ import wishlisticon from '/icons/heart.svg'
 import carticon from '/icons/shopping-cart.svg'
 import searchicon from '/icons/search-normal-1.svg'
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
+  const [scroll, setScroll] = useState(false);
+
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 1);
+    });
+  }, []);
   return (
-    <header className='p-6'>
-      <nav className='flex justify-center mx-auto items-center lg:gap-10 lg:max-w-5xl'>
+    <header className={scroll ? 'bg-neutral-100 sticky top-0 w-full z-50 shadow-lg' : 'bg-neutral-100 sticky top-0 w-full z-50'}>
+      <div className='text-center bg-neutral-900 text-neutral-100 p-1'>
+        <p>
+          Cupom xesquedele
+        </p>
+      </div>
+      <nav className='flex justify-center mx-auto items-center p-6 lg:gap-10 lg:max-w-5xl'>
         <Link to="/">
-          <img src={logo} alt="Medellin Logo" className='w-28' />
+          <img src={logo} alt="Medellin Logo" className='w-24' />
         </Link>
         <ul className='flex gap-5 mx-auto items-center'>
           <li>
