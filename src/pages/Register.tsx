@@ -1,17 +1,15 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import InputForm from '../components/auth/InputForm'
-import { ptBR } from '@mui/x-date-pickers/locales/ptBR'
+import { ptBR } from '@mui/x-date-pickers/locales'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import 'dayjs/locale/en-gb';
+import 'dayjs/locale/pt-br';
 
 import '../App.css'
 import logo from '/images/medellin-black.png'
 import login_bg from '/images/login_bg.webp'
-
-const brLocale = ptBR.components.MuiLocalizationProvider.defaultProps.localeText;
 
 const Register = () => {
 
@@ -20,7 +18,7 @@ const Register = () => {
 
 
   return (
-    <div className='flex gap-28 py-20 lg:max-w-4xl mx-auto'>
+    <div className='flex gap-28 py-12 lg:max-w-4xl mx-auto'>
       <div className='space-y-10'>
         <Link to='/'>
           <img src={logo} alt="Medellin Logo" className='w-32' />
@@ -38,7 +36,7 @@ const Register = () => {
               id='name'
               label='Nome completo'
             />
-            <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='en-gb' localeText={ptBR.components.MuiLocalizationProvider.defaultProps.localeText}>
+            <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='pt-br' localeText={ptBR.components.MuiLocalizationProvider.defaultProps.localeText}>
               <DatePicker label="Data de Nascimento"
                 sx={{
                   width: '100%',
