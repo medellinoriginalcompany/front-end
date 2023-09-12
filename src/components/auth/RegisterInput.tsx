@@ -9,7 +9,7 @@ type Props = {
 }
 
 
-const InputForm = (props: Props) => {
+const RegisterInput = (props: Props) => {
 
   const [value, setValue] = useState('');
 
@@ -47,4 +47,4 @@ const InputForm = (props: Props) => {
   )
 }
 
-export default InputForm
+export default RegisterInput

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import InputForm from '../components/auth/InputForm'
+import RegisterInput from '../components/auth/RegisterInput'
 import { ptBR } from '@mui/x-date-pickers/locales/ptBR'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers'
@@ -30,7 +30,7 @@ const Register = () => {
         <form action="" className='flex flex-col'>
           <div className='space-y-5'>
 
-            <InputForm
+            <RegisterInput
               type='text'
               name='name'
               id='name'
@@ -48,32 +48,32 @@ const Register = () => {
                 }}
                 selectedSections={undefined} onSelectedSectionsChange={undefined} />
             </LocalizationProvider>
-            <InputForm
+            <RegisterInput
               type='tel'
               name='cpf'
               id='cpf'
               label='CPF'
               maxLength={14}
             />
-            <InputForm
+            <RegisterInput
               type='tel'
               name='number'
               id='number'
               label='Telefone'
             />
-            <InputForm
+            <RegisterInput
               type='email'
               name='email'
               id='email'
               label='E-mail'
             />
-            <InputForm
+            <RegisterInput
               type='password'
               name='password'
               id='password'
               label='Senha'
             />
-            <InputForm
+            <RegisterInput
               type='password'
               name='confirmPassword'
               id='confirmPassword'
