@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState, useRef, useContext, ChangeEvent } from 'react'
 import { motion } from 'framer-motion'
 import { AuthContext } from '../contexts/AuthContext'
-import LoginInput from '../components/auth/LoginInput'
+import Input from '../components/auth/Input'
 
 import '../App.css'
 import logo from '/images/medellin-black.png'
@@ -90,7 +90,7 @@ const Login = () => {
         <form onSubmit={handleSubmit} method='post' className='flex flex-col'>
           <div className='space-y-5'>
 
-            <LoginInput
+            <Input
               type='email'
               name='email'
               id='email'
@@ -99,7 +99,7 @@ const Login = () => {
               innerRef={emailRef}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             />
-            <LoginInput
+            <Input
               type='password'
               name='password'
               id='password'
