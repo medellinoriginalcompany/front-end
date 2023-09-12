@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import InputForm from '../components/auth/InputForm'
-import { ptBR } from '@mui/x-date-pickers/locales'
+import { ptBR } from '@mui/x-date-pickers/locales/ptBR'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -44,18 +44,19 @@ const Register = () => {
                 views={['year', 'month', 'day']}
                 value={birthDate}
                 onChange={(newValue) => {
-                  setBirthDate(newValue)
+                  setBirthDate(newValue);
                 }}
-              />
+                selectedSections={undefined} onSelectedSectionsChange={undefined} />
             </LocalizationProvider>
             <InputForm
-              type='text'
+              type='tel'
               name='cpf'
               id='cpf'
               label='CPF'
+              maxLength={14}
             />
             <InputForm
-              type='text'
+              type='tel'
               name='number'
               id='number'
               label='Telefone'
