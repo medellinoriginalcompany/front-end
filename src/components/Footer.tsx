@@ -129,8 +129,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
-            <img src={locationicon} alt="Localização" className='brightness-[6] w-8'/>
+          <div className='rounded-full bg-neutral-100 p-2'>
+            <img src={locationicon} alt="Localização" className='w-8 brightness-[.3]'/>
           </div>
 
         </div>

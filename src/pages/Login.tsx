@@ -31,7 +31,7 @@ const Login = () => {
               label='Senha'
             />
           </div>
-          <Link to='/esqueci-senha' className='self-end font-semibold'>
+          <Link to='/esqueci-senha' className='self-end font-semibold my-2'>
             Esqueci minha senha
           </Link>
 
