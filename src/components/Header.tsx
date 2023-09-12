@@ -3,18 +3,27 @@ import profileicon from '/icons/user.svg'
 import wishlisticon from '/icons/heart.svg'
 import carticon from '/icons/shopping-cart.svg'
 import searchicon from '/icons/search-normal-1.svg'
+import logouticon from '/icons/logout.svg'
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
 
 const Header = () => {
-  const [scroll, setScroll] = useState(false);
 
+  const auth = useContext(AuthContext);
+
+  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 1);
     });
   }, []);
+
+  const handleLogout = () => {
+    auth.logout();
+  }
+
   return (
     <header className={scroll ? 'bg-neutral-100 sticky top-0 w-full z-50 shadow-lg' : 'bg-neutral-100 sticky top-0 w-full z-50'}>
       <div className='text-center bg-neutral-900 text-neutral-100 p-1'>
@@ -77,7 +86,12 @@ const Header = () => {
             <Link to='/carrinho'>
               <img src={carticon} alt="Visualizar Carrinho" />
             </Link>
-          </div>
+          </div>  
+          {!auth.user ? '' :
+            <button onClick={handleLogout} >
+              <img src={logouticon} alt='Sair da conta' />
+            </button>
+            }
         </div>
       </nav>
     </header>
