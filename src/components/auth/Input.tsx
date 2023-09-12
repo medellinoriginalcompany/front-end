@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoginInput: React.FC<any> = ({
+const Input: React.FC<any> = ({
   name,
   label,
   value,
@@ -34,11 +34,10 @@ const LoginInput: React.FC<any> = ({
         onFocus={handleFocus}
         maxLength={maxlength}
         aria-invalid={ariainvalid}
-        autoComplete="off"
         {...(required ? { required: true } : {})}
       />
     </div>
   );
 };
 
-export default LoginInput;
+export default Input;
