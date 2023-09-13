@@ -85,35 +85,14 @@ const Register = () => {
 
 
     } catch (err: any) {
-      switch (err.response?.status) {
-        case 400:
-          setErrMsg('Erro Interno');
-          break;
-
-        case 401:
-          setErrMsg('Email ou senha inválidos');
-          break;
-
-        case 403:
-          setErrMsg('Acesso negado');
-          break;
-        case 409:
-          setErrMsg('Email/Usuário já existente.');
-          break;
-
-        // Handle other error types if necessary
-
-        default:
-          setErrMsg('Erro inesperado');
-          break;
-      }
+      setErrMsg(err.response.data.message);
     }
   };
 
 
   return (
     <div className='flex gap-28 py-12 lg:max-w-4xl mx-auto'>
-      <div className='space-y-10'>
+      <div className='space-y-10 min-w-[440px]'>
         <Link to='/'>
           <img src={logo} alt="Medellin Logo" className='w-32' />
         </Link>

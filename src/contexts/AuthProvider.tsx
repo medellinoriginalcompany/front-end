@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }: { children: React.JSX.Element }) => {
     const validateToken = async () => {
       const response = await api.validateToken();
 
-      if(response) {
+      if (response) {
         setUser(response.user);
       }
     };
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }: { children: React.JSX.Element }) => {
 
   const logout = async () => {
     const response = await api.logout();
-    if(response) {
+    if (response) {
       setUser(null);
 
       return true;
