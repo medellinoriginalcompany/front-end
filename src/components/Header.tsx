@@ -3,10 +3,10 @@ import profileicon from '/icons/user.svg'
 import wishlisticon from '/icons/heart.svg'
 import carticon from '/icons/shopping-cart.svg'
 import searchicon from '/icons/search-normal-1.svg'
-import logouticon from '/icons/logout.svg'
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
+import { motion } from 'framer-motion';
 
 const Header = () => {
 
@@ -26,11 +26,19 @@ const Header = () => {
 
   return (
     <header className={scroll ? 'bg-neutral-100 sticky top-0 w-full z-50 shadow-lg' : 'bg-neutral-100 sticky top-0 w-full z-50'}>
-      <div className='text-center bg-neutral-900 text-neutral-100 p-1'>
-        <p>
+      <motion.div className='text-center bg-neutral-900 text-neutral-100 p-1 h-9'
+        animate={{
+          height: scroll ? '0' : '36px',
+          opacity: scroll ? 0 : 1,
+          transition: {
+            duration: 1,
+            type: 'spring',
+          }
+        }}>
+        <p className={scroll ? 'text-transparent' : ''}>
           Cupom xesquedele
         </p>
-      </div>
+      </motion.div>
       <nav className='flex justify-center mx-auto items-center p-6 lg:gap-10 lg:max-w-5xl'>
         <Link to="/">
           <img src={logo} alt="Medellin Logo" className='w-24' />
@@ -80,18 +88,20 @@ const Header = () => {
             <Link to='/login'>
               <img src={profileicon} alt="Ver Perfil" />
             </Link>
-            <Link to='/wishlist'>
-              <img src={wishlisticon} alt="Lista de Desejos" />
-            </Link>
+            {!auth.user ? '' :
+              <Link to='/wishlist'>
+                <img src={wishlisticon} alt="Lista de Desejos" />
+              </Link>
+            }
             <Link to='/carrinho'>
               <img src={carticon} alt="Visualizar Carrinho" />
             </Link>
-          </div>  
+          </div>
           {!auth.user ? '' :
             <button onClick={handleLogout} >
-              <img src={logouticon} alt='Sair da conta' />
+              Sair
             </button>
-            }
+          }
         </div>
       </nav>
     </header>
