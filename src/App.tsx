@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import LoginGuard from './contexts/VerifyLogin';
+import MyProfile from './pages/MyProfile';
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
           <Register />
         </LoginGuard>
       } />
+      <Route path='/meu-perfil' element={<MyProfile /> } />
 
       <Route path='*' element={<Navigate to="/404" replace />} />
     </Routes>
