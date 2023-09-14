@@ -14,7 +14,7 @@ export const Tshirts = () => {
         title='Camisetas Medellin'
       />
 
-      <div className='lg:max-w-5xl 2xl:max-w-6xl mx-auto space-y-5'>
+      <div className='lg:max-w-6xl 2xl:max-w-6xl mx-auto space-y-5'>
         <div className='2xl:max-w-5xl mx-auto'>
           <h2 className='font-hubba-oblique text-5xl text-center lowercase'>
             Camisetas
