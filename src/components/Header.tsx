@@ -85,11 +85,11 @@ const Header = () => {
             </div>
           </form>
           <div className='flex items-center gap-3'>
-            <Link to='/login'>
+            <Link to={!auth.user ? '/login' : '/meu-perfil'}>
               <img src={profileicon} alt="Ver Perfil" />
             </Link>
             {!auth.user ? '' :
-              <Link to='/wishlist'>
+              <Link to='/meu-perfil?tab=lista-de-desejos'>
                 <img src={wishlisticon} alt="Lista de Desejos" />
               </Link>
             }
