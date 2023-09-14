@@ -23,7 +23,7 @@ function App() {
           <Register />
         </LoginGuard>
       } />
-      <Route path='/meu-perfil' element={<MyProfile /> } />
+      <Route path='/meu-perfil' element={<MyProfile />} />
 
       <Route path='*' element={<Navigate to="/404" replace />} />
     </Routes>
