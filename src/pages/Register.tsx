@@ -16,7 +16,7 @@ import erricon from '/icons/danger.svg'
 
 const Register = () => {
 
-  const FORM_ENDPOINT = import.meta.env.VITE_REACT_APP_API + '/registro';
+  const FORM_ENDPOINT = import.meta.env.VITE_API_URL + '/registro';
 
   const fullNameRef = useRef<HTMLInputElement>(null!);
 
