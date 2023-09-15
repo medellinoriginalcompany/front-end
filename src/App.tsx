@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
 
 import './App.css'
 import Home from './pages/Home'
@@ -26,6 +26,7 @@ function App() {
       <Route path='/meu-perfil' element={<MyProfile />} />
 
       <Route path='*' element={<Navigate to="/404" replace />} />
+      <Route path='/404' element={<Link to='/'>Voltar</Link>} />
     </Routes>
   )
 }
