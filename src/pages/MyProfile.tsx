@@ -5,6 +5,7 @@ import usericon from '/icons/user.svg'
 import wishlisticon from '/icons/heart.svg'
 import addressesicon from '/icons/location.svg'
 import ordersicon from '/icons/box.svg'
+import refoundicon from '/icons/arrow-2.svg'
 import { useSearchParams } from "react-router-dom"
 import EditProfile from "../components/user-profile/EditProfile"
 import Wishlist from "../components/user-profile/Wishlist"
@@ -61,7 +62,7 @@ const MyProfile = () => {
         </div>
 
         <div className="w-max min-h-[400px] px-4 border-l border-neutral-300">
-          <ul className="space-y-1 w-64">
+          <ul className="space-y-1 w-max">
             <li>
               <Option
                 title="Editar Perfil"
@@ -88,8 +89,16 @@ const MyProfile = () => {
             </li>
             <li>
               <Option
-                title="Pedidos"
+                title="Pedidos e Entregas"
                 icon={ordersicon}
+                tab={showOrders}
+                handleClick={() => setSearchParams({ tab: params[3] })}
+              />
+            </li>
+            <li>
+              <Option
+                title="Trocas e Devoluções"
+                icon={refoundicon}
                 tab={showOrders}
                 handleClick={() => setSearchParams({ tab: params[3] })}
               />

@@ -91,16 +91,21 @@ const EditProfile = () => {
               required
               onChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             />
+          <div className='w-fit mx-auto'>
+            <button disabled={!fullName}
+              className='bg-neutral-800 font-medium rounded-full px-24 py-2.5 text-white hover:bg-neutral-900 focus:ring focus:outline-none focus:ring-neutral-400'
+              type="submit">
+              Salvar
+            </button>
+          </div>
+          <div className='space-x-2 flex items-center'>
+            <input type="checkbox" name="news" id="news" />
+            <label htmlFor="news">Quero receber as novidades!</label>
           </div>
 
+          </div>
 
         </div>
-
-        <button disabled={!!(!fullName)}
-          className='bg-violet-500 font-medium rounded-lg px-7 py-2.5 text-center text-white w-fit hover:bg-violet-500/90 focus:ring focus:outline-none focus:ring-violet-300'
-          type="submit">
-          Salvar
-        </button>
       </form>
     </motion.div>
   )
