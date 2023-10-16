@@ -9,7 +9,7 @@ import model4 from '/images/model4.webp'
 const Releases = () => {
   return (
     <section className="py-14 space-y-9">
-      <div className="flex justify-between items-center mx-auto lg:max-w-5xl">
+      <div className="flex justify-between items-center mx-auto lg:max-w-7xl">
         <h2 className='font-hubba-oblique text-5xl'>
           Lançamentos
         </h2>
@@ -19,7 +19,7 @@ const Releases = () => {
         </Link>
       </div>
 
-      <div className=' mx-auto lg:max-w-6xl'>
+      <div className=' mx-auto lg:max-w-7xl'>
         <div className='flex gap-5 overflow-hidden'>
           <DiscountProductCard
             model={model1}

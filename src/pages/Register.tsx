@@ -12,7 +12,7 @@ import { motion } from 'framer-motion'
 import '../App.css'
 import logo from '/images/medellin-black.png'
 import login_bg from '/images/login_bg.webp'
-import erricon from '/icons/danger.svg'
+import erricon from '/icons/danger-red.svg'
 
 const Register = () => {
 

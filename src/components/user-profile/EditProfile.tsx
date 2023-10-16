@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, useContext, useEffect } from 'react';
-import Input from '../user-profile/Input';
+import Input from './Input';
 import { AuthContext } from '../../contexts/AuthContext';
 import { motion } from 'framer-motion';
 import dayjs from 'dayjs';

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useEffect, useState, useRef, useContext, ChangeEvent } from 'react'
+import { useEffect, useState, useContext, ChangeEvent } from 'react'
 import { motion } from 'framer-motion'
 import { AuthContext } from '../contexts/AuthContext'
 import Input from '../components/auth/Input'
@@ -7,21 +7,15 @@ import Input from '../components/auth/Input'
 import '../App.css'
 import logo from '/images/medellin-black.png'
 import login_bg from '/images/login_bg.webp'
-import erricon from '/icons/danger.svg'
+import erricon from '/icons/danger-red.svg'
 
 const Login = () => {
 
   const auth = useContext(AuthContext)
 
-  const emailRef = useRef<HTMLInputElement>(null!);
-
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
   const [errMsg, setErrMsg] = useState<string>("")
-
-  useEffect(() => {
-    emailRef.current.focus();
-  }, []);
 
   useEffect(() => {
     setErrMsg('');
@@ -30,7 +24,7 @@ const Login = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(email, password)
+
     try {
       const response = await auth.login(email, password);
       if (response) {
@@ -76,19 +70,18 @@ const Login = () => {
             <Input
               type='email'
               name='email'
-              id='email'
               label='E-mail ou CPF'
               value={email}
-              innerRef={emailRef}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+              required
             />
             <Input
               type='password'
               name='password'
-              id='password'
               label='Senha'
               value={password}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+              required
             />
           </div>
           <Link to='/esqueci-senha' className='self-end font-semibold my-2'>
