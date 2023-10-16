@@ -1,43 +1,41 @@
-import React from 'react';
+import React from 'react'
 
-const Input: React.FC<any> = ({
-  name,
-  label,
-  value,
-  type,
-  handleOnChange,
-  handleFocus,
-  ariainvalid,
-  innerRef,
-  required,
-  maxlength,
-}) => {
+type Props = {
+  name: string,
+  label: string,
+  type: string,
+  value: string,
+  handleOnChange: ((e: React.ChangeEvent<HTMLInputElement>) => void),
+  handleFocus?: ((e: React.FocusEvent<HTMLInputElement>) => void),
+  maxlength?: number,
+  required?: boolean,
+  autoFocus?: boolean,
+  focus?: boolean,
+}
 
+const Input = (props: Props) => {
   return (
-    <div className="flex relative flex-col group">
-      <label
-        htmlFor={name}
-        className={value ?
-          `absolute pointer-events-none transition-all duration-300 -translate-y-4 text-sm` :
-          `absolute pointer-events-none text-lg transition-all duration-300 translate-y-2 group-focus-within:-translate-y-4 group-focus-within:text-sm`}
-      >
-        {label}
+    <div className='flex relative flex-col group'>
+      <label htmlFor={props.name}
+        className={props.value ?
+          `absolute pointer-events-none transition-all duration-300 -translate-y-4 text-sm font-medium` :
+          `absolute pointer-events-none transition-all duration-300 translate-y-2 text-lg group-focus-within:-translate-y-4 group-focus-within:text-sm group-focus-within:font-medium`}>
+        {props.label}
       </label>
       <input
-        className="bg-transparent py-2 text-lg border-b border-neutral-800 placeholder:text-neutral-800 focus:outline-none"
-        type={type}
-        id={name}
-        name={name}
-        value={value}
-        ref={innerRef}
-        onChange={handleOnChange}
-        onFocus={handleFocus}
-        maxLength={maxlength}
-        aria-invalid={ariainvalid}
-        {...(required ? { required: true } : {})}
+        className="bg-transparent py-2 text-lg border-b border-neutral-400 focus:outline-none"
+        type={props.type}
+        id={props.name}
+        name={props.name}
+        value={props.value}
+        onChange={props.handleOnChange}
+        onFocus={props.handleFocus}
+        maxLength={props.maxlength}
+        required={props.required}
+        autoFocus={props.autoFocus}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input
