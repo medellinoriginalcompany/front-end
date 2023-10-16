@@ -7,7 +7,7 @@ const api = axios.create({
 
 export const useApi = () => ({
   validateToken: async () => {
-    const response = await api.post('/validate');
+    const response = await api.post('/validar');
     return response.data;
   },
 
@@ -18,11 +18,6 @@ export const useApi = () => ({
 
   logout: async () => { 
     const response = await api.post('/logout');
-    return response.data;
-  },
-
-  fetchCategories: async (url: string) => {
-    const response = await api.post(url);
     return response.data;
   },
 
