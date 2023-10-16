@@ -1,22 +1,13 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import DefaultPage from "../components/home/DefaultPage";
 import Hero from "../components/home/Hero";
 import Releases from "../components/home/Releases/Releases";
-import Sweatshirts from "../components/home/Sweatshirts/Sweatshirts";
-import { Tshirts } from "../components/home/Tshirts/Tshirts";
 
 const Home = () => {
   return (
-    <>
-      <Header />
-
+    <DefaultPage>
       <Hero />
       <Releases />
-      <Tshirts />
-      <Sweatshirts />
-
-      <Footer />
-    </>
+    </DefaultPage>
   )
 }
 
