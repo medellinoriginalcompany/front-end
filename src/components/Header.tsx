@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { motion } from 'framer-motion';
+import HeaderItem from './HeaderItem';
 
 const Header = () => {
 
@@ -44,31 +45,10 @@ const Header = () => {
           <img src={logo} alt="Medellin Logo" className='w-24' />
         </Link>
         <ul className='flex gap-5 mx-auto items-center'>
-          <li>
-            <Link to='/masculino'>
-              Masculino
-            </Link>
-          </li>
-          <li>
-            <Link to='/feminino'>
-              Feminino
-            </Link>
-          </li>
-          <li>
-            <Link to='/infantil'>
-              Infantil
-            </Link>
-          </li>
-          <li>
-            <Link to='/colecoes'>
-              Coleções
-            </Link>
-          </li>
-          <li>
-            <Link to='/parceiros'>
-              Parceiros
-            </Link>
-          </li>
+          <HeaderItem name='Camisetas' link='/camisetas' />
+          <HeaderItem name='Moletons' link='/moletons' />
+          <HeaderItem name='Manga longa' link='/manga-longa' />
+          <HeaderItem name='Coleções' link='/colecoes' />
         </ul>
 
 
@@ -76,9 +56,9 @@ const Header = () => {
           <form>
             <div className='relative w-full'>
               <input type="search" name="search" id="search" placeholder='Buscar'
-                className='bg-neutral-300 px-5 py-2 rounded-full focus:outline-none focus:ring-2 ring-neutral-400 placeholder:text-neutral-600 placeholder:font-semibold' />
+                className='bg-neutral-200 px-5 py-2 rounded-full focus:outline-none focus:ring-2 ring-neutral-400 placeholder:text-neutral-600 placeholder:font-semibold' />
               <button type="submit">
-                <div className='absolute top-0 right-0 px-3 py-2 rounded-r-full bg-neutral-300'>
+                <div className='absolute top-0 right-0 px-3 py-2.5 rounded-r-full bg-neutral-200 hover:bg-neutral-300'>
                   <img src={searchicon} className='w-5' />
                 </div>
               </button>
