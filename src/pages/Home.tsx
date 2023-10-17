@@ -1,6 +1,6 @@
 import DefaultPage from "../components/home/DefaultPage";
 import Hero from "../components/home/Hero";
-import Releases from "../components/home/Releases/Releases";
+import Releases from "../components/home/Releases";
 
 const Home = () => {
   return (

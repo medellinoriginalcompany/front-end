@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import DiscountProductCard from '../Cards/DiscountProductCard'
+import DiscountProductCard from './Cards/DiscountProductCard'
 
 import model1 from '/images/model1.webp'
 import model2 from '/images/model2.webp'
@@ -26,24 +26,28 @@ const Releases = () => {
             title='Camiseta A'
             oldPrice='299,99'
             newPrice='229,99'
+            percentage={23}
           />
           <DiscountProductCard
             model={model2}
             title='Camiseta B'
             oldPrice='299,99'
             newPrice='229,99'
+            percentage={12}
           />
           <DiscountProductCard
             model={model3}
             title='Camiseta C'
             oldPrice='299,99'
             newPrice='229,99'
+            percentage={9}
           />
           <DiscountProductCard
             model={model4}
             title='Camiseta D'
             oldPrice='299,99'
             newPrice='229,99'
+            percentage={10}
           />
         </div>
       </div>
