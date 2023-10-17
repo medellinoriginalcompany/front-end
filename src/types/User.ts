@@ -5,7 +5,7 @@ export type User = {
   FullName: string,
   BirthDate: string,
   CPF: string,
-  Number: string,
+  Phone: string,
   BillingAddress: string,
   Address1: string,
   Email: string,

@@ -1,22 +1,18 @@
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import DefaultPage from "../components/DefaultPage";
 import Hero from "../components/home/Hero";
-import Releases from "../components/home/Releases/Releases";
-import Sweatshirts from "../components/home/Sweatshirts/Sweatshirts";
-import { Tshirts } from "../components/home/Tshirts/Tshirts";
+import Offers from "../components/home/Offers";
+import PreFooter from "../components/home/PreFooter";
+import Releases from "../components/home/Releases";
 
 const Home = () => {
   return (
-    <>
-      <Header />
-
+    <DefaultPage>
       <Hero />
       <Releases />
-      <Tshirts />
-      <Sweatshirts />
-
-      <Footer />
-    </>
+      <div className="max-w-5xl mx-auto"><hr className="border-neutral-400"/></div>
+      <Offers />
+      <PreFooter />
+    </DefaultPage>
   )
 }
 

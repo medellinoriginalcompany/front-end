@@ -11,3 +11,8 @@
   font-family: 'Abang';
   src: url(./assets/fonts/Abang-Regular.woff) format('woff');
 }
+
+@font-face {
+  font-family: 'Zing';
+  src: url(./assets/fonts/zing-rust-demo-base.woff) format('woff');
+}

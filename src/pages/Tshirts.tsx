@@ -1,10 +1,10 @@
-import ProductCard from '../Cards/ProductCard'
-import FilterButton from '../../filter/FilterButton'
+import ProductCard from '../components/home/Cards/ProductCard'
+import FilterButton from '../components/filter/FilterButton'
 import banner from '/images/section_camisetas.webp'
 import model5 from '/images/model5.webp'
 import model6 from '/images/model6.webp'
 import model7 from '/images/model7.webp'
-import SectionBanner from '../SectionBanner'
+import SectionBanner from '../components/home/SectionBanner'
 
 export const Tshirts = () => {
   return (
@@ -14,8 +14,8 @@ export const Tshirts = () => {
         title='Camisetas Medellin'
       />
 
-      <div className='lg:max-w-6xl mx-auto space-y-5'>
-        <div className='lg:max-w-5xl mx-auto'>
+      <div className='lg:max-w-6xl 2xl:max-w-6xl mx-auto space-y-5'>
+        <div className='2xl:max-w-5xl mx-auto'>
           <h2 className='font-hubba-oblique text-5xl text-center lowercase'>
             Camisetas
           </h2>

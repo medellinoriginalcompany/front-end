@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  mode: 'jit',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,tsx}",
@@ -7,8 +8,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'hubba-oblique': 'Hubba',
-        'abang': 'Abang',
+        'hubba-oblique': "'Hubba'",
+        'abang': "'Abang'",
+        'zing': "'Zing'",
       }
     },
   },

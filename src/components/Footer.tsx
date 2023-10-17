@@ -13,7 +13,7 @@ import locationicon from '/icons/location.svg'
 const Footer = () => {
   return (
     <footer className='bg-neutral-950 text-neutral-100 w-full py-12'>
-      <div className='lg:max-w-7xl mx-auto space-y-12'>
+      <div className='lg:max-w-6xl 2xl:max-w-7xl mx-auto space-y-12'>
         <div>
           <Link to='/' className='w-fit block'>
             <img src={logo} alt="Medellin Logo" className='w-24' />

@@ -1,11 +1,11 @@
-import FilterButton from "../../filter/FilterButton"
-import ProductCard from "../Cards/ProductCard"
+import FilterButton from "../components/filter/FilterButton"
+import ProductCard from "../components/home/Cards/ProductCard"
 
 import banner from '/images/section_moletons.webp'
 import model8 from '/images/model8.webp'
 import model9 from '/images/model9.webp'
 import model10 from '/images/model10.webp'
-import SectionBanner from "../SectionBanner"
+import SectionBanner from "../components/home/SectionBanner"
 
 const Sweatshirts = () => {
   return (

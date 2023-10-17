@@ -16,7 +16,7 @@ const SectionBanner = (props: Props) => {
       <h1
         className='font-abang font-semibold absolute top-0 py-52 px-20 text-5xl text-neutral-100 '
         style={{
-          transform: isInView ? 'none' : 'translateX(-200px',
+          transform: isInView ? 'none' : 'translateX(-200px)',
           opacity: isInView ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1)"
         }}>
