@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useEffect, useRef, useState, ChangeEvent } from 'react'
+import { useEffect, useState, ChangeEvent } from 'react'
 import Input from '../components/auth/Input'
 import { ptBR } from '@mui/x-date-pickers/locales/ptBR'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -17,8 +17,6 @@ import erricon from '/icons/danger-red.svg'
 const Register = () => {
 
   const FORM_ENDPOINT = import.meta.env.VITE_API_URL + '/registro';
-
-  const fullNameRef = useRef<HTMLInputElement>(null!);
 
   const [fullName, setFullName] = useState<string>("");
   const [birthDate, setBirthDate] = useState<Date | null>(null);
@@ -41,10 +39,6 @@ const Register = () => {
 
   const [success, setSuccess] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>("");
-
-  useEffect(() => {
-    fullNameRef.current.focus();
-  }, []);
 
   useEffect(() => {
     setValidEmail(emailREGEX.test(email));
@@ -128,11 +122,11 @@ const Register = () => {
             <Input
               type='text'
               name='name'
-              id='name'
               label='Nome completo'
-              innerRef={fullNameRef}
               value={fullName}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setFullName(e.target.value)}
+              autoFocus
+              required
             />
             <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='pt-br' localeText={ptBR.components.MuiLocalizationProvider.defaultProps.localeText}>
               <DatePicker label="Data de Nascimento"
@@ -150,10 +144,11 @@ const Register = () => {
               type='tel'
               name='cpf'
               label='CPF'
-              maxLength={14}
+              maxlength={14}
               value={cpf}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setCpf(e.target.value)}
               handleFocus={() => setCpfFocus(true)}
+              required
             />
             <div className={cpfFocus ? 'bg-red-300/30 p-3 rounded-lg border border-red-400 font-semibold text-red-500' : 'hidden'}>
               <p className='font-bold text-sm'>
@@ -163,21 +158,21 @@ const Register = () => {
             <Input
               type='tel'
               name='phone'
-              id='phone'
               label='Telefone'
-              maxLength={11}
+              maxlength={11}
               value={phone}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
+              required
             />
 
             <Input
               type='email'
               name='email'
-              id='email'
               label='E-mail'
               value={email}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               handleFocus={() => setEmailFocus(true)}
+              required
             />
 
             <div className={emailFocus && email && !validEmail ? 'bg-red-300/30 p-3 rounded-lg border border-red-400 font-semibold text-red-500' : 'hidden'}>
@@ -193,11 +188,11 @@ const Register = () => {
             <Input
               type='password'
               name='password'
-              id='password'
               label='Senha'
               value={password}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               handleFocus={() => setPasswordFocus(true)}
+              required
             />
 
             <div className={passwordFocus && password && !validPassword ? 'bg-red-300/30 p-3 rounded-lg border border-red-400 font-semibold text-red-500' : 'hidden'}>
@@ -220,11 +215,11 @@ const Register = () => {
             <Input
               type='password'
               name='confirmPassword'
-              id='confirmPassword'
               label='Confirmar Senha'
               value={confirmPassword}
               handleOnChange={(e: ChangeEvent<HTMLInputElement>) => setConfirmPassword(e.target.value)}
               handleFocus={() => setConfirmPasswordFocus(true)}
+              required
             />
 
             <div className={confirmPasswordFocus && confirmPassword && password && !validMatch ? 'bg-red-300/30 p-3 rounded-lg border border-red-400 font-semibold text-red-500' : 'hidden'}>
