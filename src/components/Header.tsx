@@ -27,19 +27,25 @@ const Header = () => {
 
   return (
     <header className={scroll ? 'bg-neutral-100 sticky top-0 w-full z-50 shadow-lg' : 'bg-neutral-100 sticky top-0 w-full z-50'}>
-      <motion.div className='text-center bg-neutral-900 text-neutral-100 p-1 h-9'
-        animate={{
-          height: scroll ? '0' : '36px',
-          opacity: scroll ? 0 : 1,
-          transition: {
-            duration: 1,
-            type: 'spring',
-          }
-        }}>
-        <p className={scroll ? 'text-transparent' : ''}>
-          Cupom xesquedele
-        </p>
-      </motion.div>
+      {
+        !scroll && (
+            <motion.div className='text-center bg-neutral-900 text-neutral-100 p-1 h-9 overflow-hidden'
+              initial={{ height: '0px', opacity: 0 }} 
+              animate={{
+                height: scroll ? '0px' : '36px',
+                opacity: scroll ? 0 : 1,
+                transition: {
+                  duration: .3,
+                  type: 'spring',
+                }
+              }}>
+              <span className={scroll ? 'text-transparent' : ''}>
+                Cupom xesquedele
+              </span>
+
+            </motion.div>
+        )
+      }
       <nav className='flex justify-center mx-auto items-center p-6 lg:gap-10 lg:max-w-5xl'>
         <Link to="/">
           <img src={logo} alt="Medellin Logo" className='w-24' />
