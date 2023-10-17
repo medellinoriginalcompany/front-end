@@ -21,4 +21,9 @@ export const useApi = () => ({
     return response.data;
   },
 
+  getProducts: async () => {
+    const response = await api.get('/produtos');
+    return response.data;
+  },
+
 });
