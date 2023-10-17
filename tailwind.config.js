@@ -8,8 +8,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'hubba-oblique': 'Hubba',
-        'abang': 'Abang',
+        'hubba-oblique': "'Hubba'",
+        'abang': "'Abang'",
+        'zing': "'Zing'",
       }
     },
   },
