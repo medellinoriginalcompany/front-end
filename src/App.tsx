@@ -1,6 +1,5 @@
 import { Routes, Route, Navigate, useLocation, Link } from 'react-router-dom';
 
-import './App.css'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -11,6 +10,8 @@ import Sweatshirts from './pages/Sweatshirts';
 import LongSleeves from './pages/LongSleeves';
 import Collections from './pages/Collections';
 import ScrollToTop from './func/ScrollToTop';
+
+import './App.css'
 
 function App() {
   const location = useLocation();

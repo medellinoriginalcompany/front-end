@@ -1,6 +1,4 @@
-import model11 from '/images/model11.webp'
-import model12 from '/images/model12.webp'
-import model13 from '/images/model13.webp'
+import model from '/images/banner_placeholder.webp'
 import logo from '/images/medellin-black.png'
 
 const Offers = () => {
@@ -10,13 +8,13 @@ const Offers = () => {
       <div className='flex items-start justify-evenly'>
         <div className="grid grid-cols-2 gap-3 grid-rows-2 h-[450px]">
           <div className='row-span-2'>
-            <img src={model11} alt="" className='w-80 h-full object-cover'/>
+            <img src={model} alt="" className='w-80 h-full object-cover'/>
           </div>
           <div>
-            <img src={model13} alt="" className='w-80 h-full object-cover'/>
+            <img src={model} alt="" className='w-80 h-full object-cover'/>
           </div>
           <div>
-            <img src={model12} alt="" className='w-80 h-full object-cover'/>
+            <img src={model} alt="" className='w-80 h-full object-cover'/>
           </div>
         </div>
 
