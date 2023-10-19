@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import DiscountProductCard from './Cards/DiscountProductCard'
 import cldConfig from '../../hooks/useCloudinary'
 import { useApi } from '../../hooks/useApi'
-
-import model1 from '/images/model1.webp'
-import model2 from '/images/model2.webp'
-import model3 from '/images/model3.webp'
-import model4 from '/images/model4.webp'
 import { Product } from '../../types/product/Product'
 import ProductCard from './Cards/ProductCard'
+
+import { register } from 'swiper/element/bundle'
+import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+register();
 
 const Releases = () => {
   const cld = cldConfig;
@@ -17,9 +22,7 @@ const Releases = () => {
   const api = useApi();
 
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [confirmationMessage, setConfirmationMessage] = useState<string>('');
-  const [showConfirmation, setShowConfirmation] = useState<boolean>(false);
+  const [slidesPerView, setSlidesPerView] = useState<number>(4);
 
   const getProducts = async () => {
     try {
@@ -27,13 +30,9 @@ const Releases = () => {
 
       if (response) {
         setProducts(response.products);
-        setLoading(false);
       }
     } catch (error: any) {
-      console.log(error);
       console.log("Ocorreu um erro ao obter os produtos");
-      setConfirmationMessage("Ocorreu um erro ao obter os produtos");
-      setShowConfirmation(true);
     }
   }
 
@@ -41,9 +40,23 @@ const Releases = () => {
     getProducts();
   }, []);
 
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth > 1260) {
+        setSlidesPerView(4);
+      } else {
+        setSlidesPerView(2);
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <section className="py-14 space-y-9">
-      <div className="flex justify-between items-center mx-auto lg:max-w-7xl">
+    <section className="py-14">
+      <div className="flex justify-between items-center mx-auto md:max-w-7xl">
         <h2 className='font-hubba-oblique text-5xl'>
           Lançamentos
         </h2>
@@ -53,20 +66,26 @@ const Releases = () => {
         </Link>
       </div>
 
-      <div className='mx-auto lg:max-w-7xl'>
-        <div className='flex gap-5 overflow-x-scroll'>
-          {
-            products.slice(0, 10).map((product: Product) => (
-              <ProductCard key={product.ID}
+      <div className='mx-auto md:max-w-7xl'>
+        <Swiper
+          modules={[Navigation, Pagination, A11y]}
+          className='py-14'
+          slidesPerView={slidesPerView}
+          navigation
+          pagination={{ clickable: true }}>
+
+          {products.slice(0, 10).map((product: Product) => (
+            <SwiperSlide key={product.ID}>
+              <ProductCard
                 url={cld.image(product.Banner).toURL()}
                 title={product.Name}
                 price={product.Price}
-                oldPrice={product.oldPrice!}
+                oldPrice={product.oldPrice}
                 percentage={product.Percentage}
-              /> 
-            ))
-          }
-        </div>
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   )
