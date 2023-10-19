@@ -16,3 +16,19 @@
   font-family: 'Zing';
   src: url(./assets/fonts/zing-rust-demo-base.woff) format('woff');
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
+  right: 10px;
+  padding: 30px;
+  color: #000 !important;
+  fill: black !important;
+  stroke: black !important;
+  border-radius: 10px;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: #000;
+}
