@@ -1,7 +1,10 @@
+import DefaultPage from "../components/DefaultPage"
 
 const LongSleeves = () => {
   return (
-    <div>LongSleeves</div>
+    <DefaultPage>
+      <div>LongSleeves</div>
+    </DefaultPage>
   )
 }
 

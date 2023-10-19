@@ -1,7 +1,10 @@
+import DefaultPage from "../components/DefaultPage"
 
 const Collections = () => {
   return (
-    <div>Collections</div>
+    <DefaultPage>
+      <div>Collections</div>
+    </DefaultPage>
   )
 }
 
