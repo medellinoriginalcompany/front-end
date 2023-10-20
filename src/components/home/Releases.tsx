@@ -26,7 +26,7 @@ const Releases = () => {
 
   const getProducts = async () => {
     try {
-      const response = await api.getProducts();
+      const response = await api.getActiveProducts();
 
       if (response) {
         setProducts(response.products);
@@ -77,6 +77,7 @@ const Releases = () => {
           {products.slice(0, 10).map((product: Product) => (
             <SwiperSlide key={product.ID}>
               <ProductCard
+                type={product.Type!.Name}
                 url={cld.image(product.Banner).toURL()}
                 title={product.Name}
                 price={product.Price}
