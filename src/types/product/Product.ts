@@ -16,6 +16,10 @@ export type Product = {
   },
   Size?: string,
   Color?: string,
-  Type?: string,
+  Type?: {
+    ID: number,
+    Name: string,
+    Description: string,
+  },
 
 }
