@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 type Props = {
   url: string,
+  type?: string,
   title: string,
   price: string,
   oldPrice?: string,
@@ -10,9 +11,11 @@ type Props = {
 }
 const ProductCard = (props: Props) => {
 
+  const cleanTitle = props.title.replace(/ /g, '-').toLowerCase();
+
 
   return (
-    <Link to='/'>
+    <Link to={'/'+props.type?.toLowerCase()+'/'+cleanTitle}>
       <img src={props.url} alt="Modelo" className='md:min-w-[300px] md:w-[300px] md:h-[370px] 2xl:h-[450px] object-cover' />
       <div className='py-3 text-lg'>
         <p>
