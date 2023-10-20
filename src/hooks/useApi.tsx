@@ -26,4 +26,9 @@ export const useApi = () => ({
     return response.data;
   },
 
+  getActiveProducts: async () => {
+    const response = await api.get('/produtos/ativos');
+    return response.data;
+  },
+
 });
