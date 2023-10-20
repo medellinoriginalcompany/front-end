@@ -12,6 +12,7 @@ import Collections from './pages/Collections';
 import ScrollToTop from './func/ScrollToTop';
 
 import './App.css'
+import Product from './pages/Product';
 
 function App() {
   const location = useLocation();
@@ -35,6 +36,8 @@ function App() {
         <Route path='/moletons' element={<Sweatshirts />} />
         <Route path='/manga-longa' element={<LongSleeves />} />
         <Route path='/colecoes' element={<Collections />} />
+
+        <Route path='/:type/:name' element={<Product />} />
 
         <Route path='*' element={<Navigate to="/404" replace />} />
         <Route path='/404' element={<Link to='/'>Voltar</Link>} />
