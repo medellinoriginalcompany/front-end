@@ -5,7 +5,7 @@ import model from '/images/banner_placeholder.webp'
 import SectionBanner from '../components/home/SectionBanner'
 import DefaultPage from '../components/DefaultPage'
 
-export const Tshirts = () => {
+const Tshirts = () => {
   return (
     <DefaultPage>
       <section className='space-y-12'>
@@ -81,3 +81,5 @@ export const Tshirts = () => {
 
   )
 }
+
+export default Tshirts
