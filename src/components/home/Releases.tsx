@@ -5,7 +5,6 @@ import { useApi } from '../../hooks/useApi'
 import { Product } from '../../types/product/Product'
 import ProductCard from './Cards/ProductCard'
 
-import { register } from 'swiper/element/bundle'
 import { Navigation, Pagination, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -13,8 +12,6 @@ import 'swiper/css'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
-register();
 
 const Releases = () => {
   const cld = cldConfig;

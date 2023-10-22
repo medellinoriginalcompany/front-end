@@ -5,14 +5,18 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import LoginGuard from './contexts/VerifyLogin';
 import MyProfile from './pages/MyProfile';
-import { Tshirts } from './pages/Tshirts';
+import Tshirts from './pages/Tshirts';
 import Sweatshirts from './pages/Sweatshirts';
 import LongSleeves from './pages/LongSleeves';
 import Collections from './pages/Collections';
 import ScrollToTop from './func/ScrollToTop';
 
+import { register } from 'swiper/element/bundle'
+
 import './App.css'
 import Product from './pages/Product';
+
+register();
 
 function App() {
   const location = useLocation();
