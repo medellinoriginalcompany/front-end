@@ -10,16 +10,14 @@ const Product = () => {
   return (
     <DefaultPage>
       <div className="px-20 py-10">
-        <div className="flex space-x-12">
-          <div className="flex gap-4 md:h-[672px] w-full">
+        <div className="lg:flex space-x-12">
+          <div className="flex gap-4 lg:h-[672px] w-full">
             <Swiper
               className="cursor-pointer pr-3"
-              modules={[]}
               slidesPerView={3}
               spaceBetween={50}
               direction={'vertical'}
-              scrollbar={{ draggable: true }}
-            >
+              scrollbar={{ draggable: true }}>
               <SwiperSlide>
                 <img src={model} alt="model" className="md:w-80 xl:w-96 md:h-56 object-cover" />
               </SwiperSlide>
