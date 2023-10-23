@@ -15,10 +15,10 @@ const ProductCard = (props: Props) => {
 
 
   return (
-    <Link to={'/'+props.type?.toLowerCase()+'/'+cleanTitle}>
+    <Link to={'/'+cleanTitle}>
       <img src={props.url} alt="Modelo" className='md:min-w-[300px] md:w-[300px] md:h-[370px] 2xl:h-[450px] object-cover' />
-      <div className='py-3 text-lg'>
-        <p>
+      <div>
+        <p className='text-lg font-medium'>
           {props.title}
         </p>
         <div className='space-y-1'>
