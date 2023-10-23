@@ -66,6 +66,7 @@ const Releases = () => {
       <div className='mx-auto md:max-w-7xl'>
         <Swiper
           modules={[Navigation, Pagination, A11y]}
+          spaceBetween={20}
           className='py-14'
           slidesPerView={slidesPerView}
           navigation
