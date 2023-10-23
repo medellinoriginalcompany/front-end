@@ -41,7 +41,7 @@ function App() {
         <Route path='/manga-longa' element={<LongSleeves />} />
         <Route path='/colecoes' element={<Collections />} />
 
-        <Route path='/:type/:name' element={<Product />} />
+        <Route path='/:name' element={<Product />} />
 
         <Route path='*' element={<Navigate to="/404" replace />} />
         <Route path='/404' element={<Link to='/'>Voltar</Link>} />
