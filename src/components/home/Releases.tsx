@@ -75,6 +75,7 @@ const Releases = () => {
           {products.slice(0, 10).map((product: Product) => (
             <SwiperSlide key={product.ID}>
               <ProductCard
+                id={product.ID}
                 url={cld.image(product.Banner).toURL()}
                 title={product.Name}
                 price={product.Price}

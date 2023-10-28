@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 
 type Props = {
+  id: number,
   url: string,
   type?: string,
   title: string,
@@ -16,7 +17,7 @@ const ProductCard = (props: Props) => {
   const percentage = Math.round((props.price - props.discountedPrice!) / props.price * 100)
 
   return (
-    <Link to={'/' + cleanTitle}>
+    <Link to={'/' + cleanTitle +'?product='+props.id}>
       <img src={props.url} alt="Modelo" className='md:min-w-[300px] md:w-[300px] md:h-[370px] 2xl:h-[450px] object-cover' />
       <div>
         <p className='text-lg font-medium'>
