@@ -6,6 +6,8 @@ import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Product } from "../types/product/Product";
 import { useApi } from "../hooks/useApi";
+import Sizes from "../components/productPage/Sizes";
+import Colors from "../components/productPage/Colors";
 
 
 
@@ -53,27 +55,8 @@ const ProductPage = () => {
               stock={product?.Stock}
             />
             <hr className="border-neutral-300" />
-            <div className="my-2 space-y-2">
-              <h3 className="font-medium text-neutral-600">Tamanho</h3>
-              <div className="space-x-2">
-                <button className="bg-neutral-200 font-medium px-3 py-1 rounded">PP</button>
-                <button className="bg-neutral-800 text-white font-medium px-3 py-1 rounded">P</button>
-                <button className="bg-neutral-200 font-medium px-3 py-1 rounded">M</button>
-                <button className="bg-neutral-200 font-medium px-3 py-1 rounded">G</button>
-                <button className="bg-neutral-200 font-medium px-3 py-1 rounded">GG</button>
-              </div>
-            </div>
-            <div>
-              <h3>Cor:<span className="px-2">Laranja</span></h3>
-              <div className="flex gap-2 max-w-md">
-                <button className="w-7 h-7 bg-black border border-neutral-300 rounded-full"></button>
-                <button className="w-7 h-7 bg-neutral-500 border border-neutral-300 rounded-full"></button>
-                <button className="w-7 h-7 bg-neutral-200 border border-neutral-300 rounded-full"></button>
-                <button className="w-7 h-7 bg-purple-500 border border-neutral-300 rounded-full"></button>
-                <button className="w-7 h-7 bg-blue-500 border border-neutral-300 rounded-full"></button>
-                <button className="w-7 h-7 bg-orange-500 border border-neutral-300 rounded-full"></button>
-              </div>
-            </div>
+            <Sizes />
+            <Colors />
 
             <div>
               <button className="bg-neutral-800 text-white font-medium px-9 py-2 rounded-full whitespace-nowrap">Adicionar ao Carrinho</button>
