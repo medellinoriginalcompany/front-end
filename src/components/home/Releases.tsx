@@ -78,8 +78,7 @@ const Releases = () => {
                 url={cld.image(product.Banner).toURL()}
                 title={product.Name}
                 price={product.Price}
-                oldPrice={product.oldPrice}
-                percentage={product.Percentage}
+                discountedPrice={product.DiscountedPrice}
               />
             </SwiperSlide>
           ))}
