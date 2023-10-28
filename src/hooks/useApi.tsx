@@ -21,6 +21,11 @@ export const useApi = () => ({
     return response.data;
   },
 
+  getProduct: async (id: number) => {
+    const response = await api.get(`/produtos/${id}`);
+    return response.data;
+  },
+
   getProducts: async () => {
     const response = await api.get('/produtos');
     return response.data;
