@@ -5,17 +5,18 @@ type Props = {
   url: string,
   type?: string,
   title: string,
-  price: string,
-  oldPrice?: string,
-  percentage: string,
+  price: number,
+  discountedPrice?: number,
 }
 const ProductCard = (props: Props) => {
 
   const cleanTitle = props.title.replace(/ /g, '-').toLowerCase();
 
+  // Calcular porcentagem de desconto
+  const percentage = Math.round((props.price - props.discountedPrice!) / props.price * 100)
 
   return (
-    <Link to={'/'+cleanTitle}>
+    <Link to={'/' + cleanTitle}>
       <img src={props.url} alt="Modelo" className='md:min-w-[300px] md:w-[300px] md:h-[370px] 2xl:h-[450px] object-cover' />
       <div>
         <p className='text-lg font-medium'>
@@ -23,20 +24,20 @@ const ProductCard = (props: Props) => {
         </p>
         <div className='space-y-1'>
           {
-            props.oldPrice &&
-            <p className='text-neutral-500 line-through'>
-              De: R$
-              <span>{props.oldPrice}</span>
-            </p>
+            props.discountedPrice! > 0 ?
+              <>
+                <p className='text-neutral-500 line-through'>
+                  De: R$
+                  <span>{props.price}</span>
+                </p>
+                <div className='space-x-2 items-center flex'>
+                  <span>R$ {props.discountedPrice}</span>
+                  <span className='rounded font-medium text-green-500 text-sm'>{percentage}% OFF</span>
+                </div>
+              </> :
+
+              <p className=''>R$ {props.price}</p>
           }
-          <div className='space-x-2 items-center flex'>
-            <span>R$ {props.price}</span>
-            {
-              props.percentage && (
-                <span className='rounded font-medium text-green-500 text-sm'>{props.percentage}% OFF</span>
-              )
-            }
-          </div>
         </div>
 
       </div>
