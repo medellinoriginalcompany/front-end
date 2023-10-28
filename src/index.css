@@ -17,6 +17,13 @@
   src: url(./assets/fonts/zing-rust-demo-base.woff) format('woff');
 }
 
+/* Remover setas do input number */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   background-color: white;
