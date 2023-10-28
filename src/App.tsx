@@ -14,7 +14,7 @@ import ScrollToTop from './func/ScrollToTop';
 import { register } from 'swiper/element/bundle'
 
 import './App.css'
-import Product from './pages/Product';
+import Product from './pages/ProductPage';
 
 register();
 

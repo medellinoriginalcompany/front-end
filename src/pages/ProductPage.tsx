@@ -1,12 +1,49 @@
 import DefaultPage from "../components/DefaultPage"
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useSearchParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Product } from "../types/product/Product";
 
 import 'swiper/css'
 import 'swiper/css/scrollbar';
 
 import model from '/images/banner_placeholder.webp'
+import { useApi } from "../hooks/useApi";
+import cldConfig from "../hooks/useCloudinary";
+import calculatePercentage from "../func/calculatePercentage";
 
-const Product = () => {
+const ProductPage = () => {
+
+  const api = useApi();
+  const params = useSearchParams();
+  const cld = cldConfig;
+
+  const [product, setProduct] = useState<Product>();
+  
+  const percentage = calculatePercentage(product?.Price, product?.DiscountedPrice);
+
+  const load = async () => {
+    const id = params[0].get('product');
+
+    try {
+      const response = await api.getProduct(Number(id));
+
+      if (response) {
+        setProduct(response.product);
+      }
+    } catch (error: any) {
+      console.log("Ocorreu um erro ao obter os produtos");
+    }
+  }
+
+  useEffect(() => {
+    load();
+
+    return () => {
+      setProduct(undefined);
+    }
+  }, []);
+
   return (
     <DefaultPage>
       <div className="px-20 py-10">
@@ -32,20 +69,31 @@ const Product = () => {
               </SwiperSlide>
             </Swiper>
             <div className="w-full">
-              <img src={model} alt="model" className="w-full max-h-full object-cover" />
+              <img src={cld.image(product?.Banner).toURL()} alt="model" className="w-full h-full object-cover" />
             </div>
           </div>
 
           <div className="w-1/2 space-y-4">
             <div>
-              <h2 className="font-hubba-oblique text-5xl">Camiseta A</h2>
+              <h2 className="font-hubba-oblique text-5xl">{product?.Name}</h2>
               <div>
                 Avaliações
               </div>
-              <p className="text-sm">Em estoque: <span>10</span></p>
+              <p className="text-sm">Em estoque: <span>{product?.Stock}</span></p>
             </div>
             <div className="my-4">
-              <span className="text-3xl">R$ 100,00</span>
+              {product?.DiscountedPrice! > 0 ?
+                <>
+                  <p className='text-neutral-500 line-through'>
+                    De: R$
+                    <span>{product?.Price}</span>
+                  </p>
+                  <div className='space-x-2 items-center flex'>
+                    <span>R$ {product?.DiscountedPrice}</span>
+                    <span className='rounded font-medium text-green-500 text-sm'>{percentage}% OFF</span>
+                  </div>
+                </> :
+                <p className=''>R$ {product?.Price}</p>}
               <div>
                 <p className="font-medium text-neutral-600">5x de R$ 20,00 sem juros</p>
               </div>
@@ -96,7 +144,7 @@ const Product = () => {
           <div className="space-y-5">
             <div>
               <h2 className="font-hubba-oblique text-3xl">Guia de Tamanhos</h2>
-              <hr className="border-neutral-300"/>
+              <hr className="border-neutral-300" />
             </div>
             <table>
               <thead className="bg-neutral-300 text-neutral-800">
@@ -139,7 +187,7 @@ const Product = () => {
 
           <div>
             <h2 className="font-hubba-oblique text-3xl">Comentários</h2>
-            <hr className="border-neutral-300"/>
+            <hr className="border-neutral-300" />
           </div>
         </div>
       </div>
@@ -147,4 +195,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default ProductPage
