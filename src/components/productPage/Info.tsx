@@ -31,7 +31,7 @@ const Info = (props: Props) => {
               <span className='rounded font-medium text-green-500 self-end text-lg'>{percentage}% OFF</span>
             </div>
           </> :
-          <p className=''>R${props.price}</p>}
+          <p className='text-2xl'>R${props.price}</p>}
         <div>
           <p className="font-medium text-neutral-600">5x de R$ 20,00 sem juros</p>
         </div>

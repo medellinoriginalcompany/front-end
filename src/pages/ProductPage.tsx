@@ -2,13 +2,18 @@ import DefaultPage from "../components/DefaultPage"
 import cldConfig from "../hooks/useCloudinary";
 import Images from "../components/productPage/Images";
 import Info from "../components/productPage/Info";
+import Sizes from "../components/productPage/Sizes";
+import Colors from "../components/productPage/Colors";
+import QuantityButton from "../components/productPage/QuantityButton";
 import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Product } from "../types/product/Product";
 import { useApi } from "../hooks/useApi";
-import Sizes from "../components/productPage/Sizes";
-import Colors from "../components/productPage/Colors";
-import QuantityButton from "../components/productPage/QuantityButton";
+
+import hearticon from '/icons/heart.svg';
+import bagicon from '/icons/shopping-bag.svg';
+import arrowicon from '/icons/arrow-right-3.svg';
+import Devolutions from "../components/productPage/Devolutions";
 
 const ProductPage = () => {
 
@@ -59,7 +64,11 @@ const ProductPage = () => {
 
             <div className="flex space-x-5">
               <QuantityButton stock={Number(product?.Stock)} />
+              <img src={bagicon} alt="" className="min-w-[24px] w-6" />
               <button className="bg-neutral-800 text-white font-medium px-9 py-2 rounded-full whitespace-nowrap">Adicionar ao Carrinho</button>
+              <button>
+                <img src={hearticon} alt="" className="min-w-[24px] w-6" />
+              </button>
             </div>
           </div>
         </div>
@@ -72,6 +81,11 @@ const ProductPage = () => {
             Simular frete
           </p>
 
+          <hr className="border-neutral-300" />
+
+          <div className="my-5 space-y-4">
+            <Devolutions />
+          </div>
 
           <div className="space-y-5">
             <div>
