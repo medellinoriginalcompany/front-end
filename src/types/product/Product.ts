@@ -3,11 +3,9 @@ export type Product = {
   ID: number,
   Name: string,
   Description: string,
-  oldPrice?: string,
-  Price: string,
-  Percentage: string,
+  DiscountedPrice?: number,
+  Price: number,
   Stock: string,
-  Discount?: number,
   Banner: string,
   Category: {
     ID: number,
