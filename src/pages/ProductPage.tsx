@@ -8,8 +8,7 @@ import { Product } from "../types/product/Product";
 import { useApi } from "../hooks/useApi";
 import Sizes from "../components/productPage/Sizes";
 import Colors from "../components/productPage/Colors";
-
-
+import QuantityButton from "../components/productPage/QuantityButton";
 
 const ProductPage = () => {
 
@@ -58,7 +57,8 @@ const ProductPage = () => {
             <Sizes />
             <Colors />
 
-            <div>
+            <div className="flex space-x-5">
+              <QuantityButton stock={Number(product?.Stock)} />
               <button className="bg-neutral-800 text-white font-medium px-9 py-2 rounded-full whitespace-nowrap">Adicionar ao Carrinho</button>
             </div>
           </div>
