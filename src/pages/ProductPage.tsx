@@ -1,13 +1,13 @@
 import DefaultPage from "../components/DefaultPage"
+import cldConfig from "../hooks/useCloudinary";
+import Images from "../components/productPage/Images";
+import Info from "../components/productPage/Info";
 import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Product } from "../types/product/Product";
-
-
 import { useApi } from "../hooks/useApi";
-import cldConfig from "../hooks/useCloudinary";
-import calculatePercentage from "../func/calculatePercentage";
-import Images from "../components/productPage/Images";
+
+
 
 const ProductPage = () => {
 
@@ -16,8 +16,6 @@ const ProductPage = () => {
   const cld = cldConfig;
 
   const [product, setProduct] = useState<Product>();
-
-  const percentage = calculatePercentage(product?.Price, product?.DiscountedPrice);
 
   const load = async () => {
     const id = params[0].get('product');
@@ -48,30 +46,12 @@ const ProductPage = () => {
           <Images url={cld.image(product?.Banner).toURL()} />
 
           <div className="w-1/2 space-y-4">
-            <div>
-              <h2 className="font-hubba-oblique text-5xl">{product?.Name}</h2>
-              <div>
-                Avaliações
-              </div>
-              <p className="text-sm">Em estoque: <span>{product?.Stock}</span></p>
-            </div>
-            <div className="my-4">
-              {product?.DiscountedPrice! > 0 ?
-                <>
-                  <p className='text-neutral-500 line-through text-xl'>
-                    De: R$
-                    <span>{product?.Price}</span>
-                  </p>
-                  <div className='space-x-2 items-center flex'>
-                    <span className="text-2xl">R${product?.DiscountedPrice}</span>
-                    <span className='rounded font-medium text-green-500 self-end text-lg'>{percentage}% OFF</span>
-                  </div>
-                </> :
-                <p className=''>R${product?.Price}</p>}
-              <div>
-                <p className="font-medium text-neutral-600">5x de R$ 20,00 sem juros</p>
-              </div>
-            </div>
+            <Info
+              name={product?.Name}
+              price={product?.Price}
+              discountedPrice={product?.DiscountedPrice}
+              stock={product?.Stock}
+            />
             <hr className="border-neutral-300" />
             <div className="my-2 space-y-2">
               <h3 className="font-medium text-neutral-600">Tamanho</h3>
@@ -98,7 +78,7 @@ const ProductPage = () => {
             <div>
               <button className="bg-neutral-800 text-white font-medium px-9 py-2 rounded-full whitespace-nowrap">Adicionar ao Carrinho</button>
             </div>
-          I</div>
+          </div>
         </div>
 
         <div>
