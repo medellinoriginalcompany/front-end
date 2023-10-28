@@ -1,16 +1,13 @@
 import DefaultPage from "../components/DefaultPage"
-import { Swiper, SwiperSlide } from 'swiper/react'
 import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Product } from "../types/product/Product";
 
-import 'swiper/css'
-import 'swiper/css/scrollbar';
 
-import model from '/images/banner_placeholder.webp'
 import { useApi } from "../hooks/useApi";
 import cldConfig from "../hooks/useCloudinary";
 import calculatePercentage from "../func/calculatePercentage";
+import Images from "../components/productPage/Images";
 
 const ProductPage = () => {
 
@@ -19,7 +16,7 @@ const ProductPage = () => {
   const cld = cldConfig;
 
   const [product, setProduct] = useState<Product>();
-  
+
   const percentage = calculatePercentage(product?.Price, product?.DiscountedPrice);
 
   const load = async () => {
@@ -48,30 +45,7 @@ const ProductPage = () => {
     <DefaultPage>
       <div className="px-20 py-10">
         <div className="lg:flex space-x-12">
-          <div className="flex gap-4 lg:h-[672px] w-full">
-            <Swiper
-              className="cursor-pointer pr-3"
-              slidesPerView={3}
-              spaceBetween={50}
-              direction={'vertical'}
-              scrollbar={{ draggable: true }}>
-              <SwiperSlide>
-                <img src={model} alt="model" className="md:w-80 xl:w-96 md:h-56 object-cover" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={model} alt="model" className="md:w-80 md:h-56 object-cover" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={model} alt="model" className="md:w-80 md:h-56 object-cover" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={model} alt="model" className="md:w-80 md:h-56 object-cover" />
-              </SwiperSlide>
-            </Swiper>
-            <div className="w-full">
-              <img src={cld.image(product?.Banner).toURL()} alt="model" className="w-full h-full object-cover" />
-            </div>
-          </div>
+          <Images url={cld.image(product?.Banner).toURL()} />
 
           <div className="w-1/2 space-y-4">
             <div>
@@ -84,16 +58,16 @@ const ProductPage = () => {
             <div className="my-4">
               {product?.DiscountedPrice! > 0 ?
                 <>
-                  <p className='text-neutral-500 line-through'>
+                  <p className='text-neutral-500 line-through text-xl'>
                     De: R$
                     <span>{product?.Price}</span>
                   </p>
                   <div className='space-x-2 items-center flex'>
-                    <span>R$ {product?.DiscountedPrice}</span>
-                    <span className='rounded font-medium text-green-500 text-sm'>{percentage}% OFF</span>
+                    <span className="text-2xl">R${product?.DiscountedPrice}</span>
+                    <span className='rounded font-medium text-green-500 self-end text-lg'>{percentage}% OFF</span>
                   </div>
                 </> :
-                <p className=''>R$ {product?.Price}</p>}
+                <p className=''>R${product?.Price}</p>}
               <div>
                 <p className="font-medium text-neutral-600">5x de R$ 20,00 sem juros</p>
               </div>
@@ -124,12 +98,7 @@ const ProductPage = () => {
             <div>
               <button className="bg-neutral-800 text-white font-medium px-9 py-2 rounded-full whitespace-nowrap">Adicionar ao Carrinho</button>
             </div>
-
-            <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ipsam aliquam eaque quo quam ducimus veritatis rem ut,
-              porro tempora sed perferendis quisquam illo hic sapiente deleniti voluptas adipisci voluptatibus.
-            </div>
-          </div>
+          I</div>
         </div>
 
         <div>
