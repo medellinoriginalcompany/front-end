@@ -15,6 +15,7 @@ import bagicon from '/icons/shopping-bag.svg';
 import Devolutions from "../components/productPage/Devolutions";
 import SafePurchase from "../components/productPage/SafePurchase";
 import SizeGuide from "../components/productPage/SizeGuide";
+import DescriptionComments from "../components/productPage/DescriptionComments";
 
 const ProductPage = () => {
 
@@ -93,10 +94,7 @@ const ProductPage = () => {
 
           <SizeGuide />
 
-          <div>
-            <h2 className="font-hubba-oblique text-3xl">Comentários</h2>
-            <hr className="border-neutral-300" />
-          </div>
+          <DescriptionComments description={product?.Description} />
         </div>
       </div>
     </DefaultPage>
