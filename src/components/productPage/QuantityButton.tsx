@@ -35,7 +35,7 @@ const QuantityButton = (props: Props) => {
       <button onClick={handleMinus} className='p-2 rounded hover:bg-neutral-300'>
         <img src={minusicon} alt="Ícone de menos" className='min-w-[20px] w-5'/>
       </button>
-      <input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} min="1" max={`${stock}`}
+      <input type="number" name='quantity' value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} min="1" max={`${stock}`}
         className="bg-neutral-200 w-12 h-8 text-center font-medium rounded focus:outline-none"
       />
       <button onClick={handleAdd} className='p-2 rounded hover:bg-neutral-300'>
