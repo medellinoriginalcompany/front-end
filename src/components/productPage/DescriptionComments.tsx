@@ -37,9 +37,11 @@ const DescriptionComments = (props: Props) => {
       <hr className="border-neutral-300" />
 
       {description && (
-        <span>
-          {props.description}
-        </span>
+        <div className='my-5'>
+          <span>
+            {props.description}
+          </span>
+        </div>
       )}
 
       {comments && (
