@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom';
 import logo from '/images/medellin-white.png';
 import instagramicon from '/icons/instagram.svg'
 import yticon from '/icons/yt.png'
-import visaicon from '/icons/visa_icon.png'
-import eloicon from '/icons/elo_icon.webp'
-import boletoicon from '/icons/boleto_icon.png'
-import pixicon from '/icons/pix_icon.webp'
-import mastercardicon from '/icons/mastercard_icon.png'
 import locationicon from '/icons/location.svg'
+import PaymentMethods from './PaymentMethods';
 
 const Footer = () => {
   return (
@@ -119,13 +115,7 @@ const Footer = () => {
               Formas de Pagamento
             </h3>
             <div className='flex items-center gap-4'>
-              <img src={visaicon} alt="Ícone Pagamento Visa" className='w-10 object-scale-down rounded-sm'/>
-              <img src={mastercardicon} alt="Ícone Pagamento Visa" className='w-10 object-scale-down rounded-sm'/>
-              <img src={boletoicon} alt="Ícone Pagamento Visa" className='w-8 object-scale-down'/>
-              <img src={pixicon} alt="Ícone Pagamento Visa" className='w-8 object-scale-down'/>
-              <div className='bg-neutral-100 p-1 rounded'>
-                <img src={eloicon} alt="Ícone Pagamento Visa" className='w-14 object-scale-down'/>
-              </div>
+              <PaymentMethods darkBg/>
             </div>
           </div>
 
