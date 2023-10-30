@@ -13,7 +13,7 @@ type Props = {
 const ProductCard = (props: Props) => {
 
   const cleanTitle = props.title.replace(/ /g, '-').toLowerCase();
-  const percentage = calculatePercentage(props.price, props.discountedPrice!);
+  const percentage = calculatePercentage(props.price, props.discountedPrice);
 
   return (
     <Link to={'/' + cleanTitle + '?product=' + props.id}>
