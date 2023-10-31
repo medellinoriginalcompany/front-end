@@ -16,6 +16,7 @@ const Hero = () => {
         slidesPerView={1}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
+        speed={1050}
         loop>
         <SwiperSlide>
           <img src={herobg} alt="Banner Landing Page" className="h-[calc(100vh-112px)] w-full object-cover brightness-75" />
