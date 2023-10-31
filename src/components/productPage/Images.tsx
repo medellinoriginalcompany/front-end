@@ -14,6 +14,7 @@ const Images = (props: Props) => {
     <div className="flex gap-4 lg:h-[672px] w-full">
       <Swiper
         className="cursor-pointer pr-3"
+        mousewheel
         slidesPerView={3}
         spaceBetween={50}
         direction={'vertical'}
