@@ -5,7 +5,7 @@ import Info from "../components/productPage/Info";
 import Sizes from "../components/productPage/Sizes";
 import Colors from "../components/productPage/Colors";
 import QuantityButton from "../components/productPage/QuantityButton";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Product } from "../types/product/Product";
 import { useApi } from "../hooks/useApi";
@@ -25,6 +25,7 @@ const ProductPage = () => {
 
   const [product, setProduct] = useState<Product>();
 
+  const navigate = useNavigate();
   const load = async () => {
     const id = params[0].get('product');
 
@@ -35,7 +36,7 @@ const ProductPage = () => {
         setProduct(response.product);
       }
     } catch (error: any) {
-      console.log("Ocorreu um erro ao obter os produtos");
+      navigate('/');
     }
   }
 
