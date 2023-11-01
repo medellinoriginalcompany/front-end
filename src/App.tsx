@@ -15,6 +15,7 @@ import { register } from 'swiper/element/bundle'
 
 import './App.css'
 import Product from './pages/ProductPage';
+import Cart from './pages/Cart';
 
 register();
 
@@ -40,6 +41,7 @@ function App() {
         <Route path='/moletons' element={<Sweatshirts />} />
         <Route path='/manga-longa' element={<LongSleeves />} />
         <Route path='/colecoes' element={<Collections />} />
+        <Route path='/carrinho' element={<Cart />} />
 
         <Route path='/:name' element={<Product />} />
 
