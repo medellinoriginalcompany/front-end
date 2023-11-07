@@ -65,12 +65,14 @@ const Releases = () => {
 
       <div className='mx-auto md:max-w-7xl'>
         <Swiper
+          className='py-14'
           modules={[Navigation, Pagination, A11y]}
           spaceBetween={20}
-          className='py-14'
           slidesPerView={slidesPerView}
+          pagination={{ clickable: true, dynamicBullets: true }}
           navigation
-          pagination={{ clickable: true }}>
+          mousewheel
+          freeMode>
 
           {products.slice(0, 10).map((product: Product) => (
             <SwiperSlide key={product.ID}>
