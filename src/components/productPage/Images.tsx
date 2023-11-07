@@ -18,7 +18,8 @@ const Images = (props: Props) => {
         slidesPerView={3}
         spaceBetween={50}
         direction={'vertical'}
-        scrollbar={{ draggable: true }}>
+        scrollbar={{ draggable: true }}
+        freeMode>
         <SwiperSlide>
           <img src={model} alt="model" className="md:w-80 xl:w-96 md:h-56 object-cover" />
         </SwiperSlide>
